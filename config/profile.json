@@ -1,0 +1,15 @@
+{
+  "markets": ["B2B", "B2C"],
+  "mvp_time_constraint": "flexible",
+  "max_validation_budget_eur": 500,
+  "allowed_domains": ["health", "dating", "enterprise", "hardware", "marketplaces", "other"],
+  "boring_is_ok_if_compelling": true,
+  "priority": "interesting ideas with real evidence and plausible monetization",
+  "avoid": [
+    "generic AI wrappers",
+    "ideas supported only by hypothetical demand",
+    "heavily saturated categories without a clear wedge",
+    "one-off complaints",
+    "products requiring large paid-acquisition budgets before validation"
+  ]
+}
