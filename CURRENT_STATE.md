@@ -29,9 +29,11 @@ Updated: 2026-08-29
 
 ## Current ranking
 1. **Prior Authorization Evidence-Pack Copilot — 83.1/100** — strongest current candidate; deep-validate one specialty and test paid concierge evidence packs before integrations.
-2. **German E-Invoice Legacy Bridge — 80.9/100** — strong time-bound compliance pain; validate whether implementation-as-product can avoid becoming consulting.
-3. **Dental Schedule QA Copilot — 78.2/100** — real repeated pain and direct product request, but meaningful competition; validate with paid schedule-audit pilots.
-4. **Construction AI Takeoff — ~72/100** — watchlist only; pain is real but the category is crowded and the wedge is not yet sharp enough.
+2. **Dental Schedule QA Copilot — 78.2/100** — real repeated pain and direct product request, but meaningful competition; validate with paid schedule-audit pilots.
+3. **Construction AI Takeoff — ~72/100** — watchlist only; pain is real but the category is crowded and the wedge is not yet sharp enough.
+
+## Rejected after validation
+- **German E-Invoice Legacy Bridge — rejected 2026-08-29.** Pain is real, but the proposed wedge is already directly served by multiple vendors offering legacy-ERP integration, API conversion, validation, and even AI-assisted mapping/PDF-to-E-invoice conversion. No sufficiently differentiated second-order problem was identified to justify further research.
 
 ## Decision thresholds
 - <68: watch or reject
