@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Problem Hunter Candidate",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "title",
+    "problem",
+    "target_user",
+    "evidence",
+    "validation_experiment"
+  ],
+  "properties": {
+    "candidate_id": {"type": "string", "minLength": 3},
+    "title": {"type": "string"},
+    "problem": {"type": "string"},
+    "target_user": {"type": "string"},
+    "job_to_be_done": {"type": "string"},
+    "solution_wedge": {"type": "string"},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "url", "summary"],
+        "properties": {
+          "date": {"type": ["string", "null"]},
+          "source": {"type": "string"},
+          "url": {"type": "string"},
+          "summary": {"type": "string"},
+          "evidence_type": {"type": "string"}
+        }
+      }
+    },
+    "existing_spend_workarounds": {"type": "array", "items": {"type": "string"}},
+    "competitors": {"type": "array", "items": {"type": "string"}},
+    "competition_note": {"type": "string"},
+    "monetization": {"type": "string"},
+    "acquisition": {"type": "string"},
+    "validation_experiment": {"type": "string"},
+    "risks": {"type": "array", "items": {"type": "string"}},
+    "next_step": {"type": "string"},
+    "status": {"type": "string"},
+    "score": {"type": "number", "minimum": 0, "maximum": 100}
+  }
+}
