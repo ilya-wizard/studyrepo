@@ -2,14 +2,30 @@
   "markets": ["B2B", "B2C"],
   "mvp_time_constraint": "flexible",
   "max_validation_budget_eur": 500,
-  "allowed_domains": ["health", "dating", "enterprise", "hardware", "marketplaces", "other"],
+  "allowed_domains": ["health", "dating", "social", "creator", "AI-native workflows", "developer tools", "movement", "travel", "enterprise", "hardware", "marketplaces", "other"],
   "boring_is_ok_if_compelling": true,
-  "priority": "interesting ideas with real evidence and plausible monetization",
+  "priority": "interesting ideas with real evidence, a product people can intuitively care about, and plausible monetization",
+  "prefer": [
+    "human behavior and social connection problems",
+    "products that change what people can do, not just how they file paperwork",
+    "AI-native workflows created by agents and new interaction patterns",
+    "creator and prosumer problems with visible user emotion or repeated workarounds",
+    "physical-world, movement, travel, learning, collaboration and community problems",
+    "second-order failures in products people already use and pay for"
+  ],
+  "deprioritize_unless_exceptional": [
+    "generic compliance and regulation tooling",
+    "accounting reconciliation and bookkeeping operations",
+    "procurement and document-chasing workflows",
+    "generic back-office automation",
+    "categories that are commercially valid but hard to care about as a product"
+  ],
   "avoid": [
     "generic AI wrappers",
     "ideas supported only by hypothetical demand",
     "heavily saturated categories without a clear wedge",
     "one-off complaints",
-    "products requiring large paid-acquisition budgets before validation"
+    "products requiring large paid-acquisition budgets before validation",
+    "buzzword-only candidate descriptions that do not explain the user's concrete problem"
   ]
 }
