@@ -3,6 +3,11 @@
 ## Mission
 Find concrete, recurring problems before inventing solutions. Search broadly across B2B and B2C. Treat public discussion as customer research, not idea inspiration.
 
+## Search-interest bias
+Commercial strength is necessary but not sufficient. Prefer problems that are intrinsically interesting to understand or build around: human behavior, social connection, creator/prosumer work, AI-native workflows, movement/physical-world activity, learning, travel, collaboration, community, and second-order failures in products people already use.
+
+Deprioritize generic compliance, accounting reconciliation, bookkeeping, procurement, document chasing and other back-office automation unless the evidence is unusually strong AND the product angle is genuinely distinctive. Do not fill the shortlist with commercially valid but boring administrative categories merely because they are easy to find.
+
 ## Search the five signal buckets
 Search several angles for each market/problem area:
 1. **Explicit demand** — "looking for", "recommend a tool", "alternative to", "does anything exist", "how do you handle".
@@ -84,6 +89,20 @@ A regulation/platform change can enter early with fewer complaints only if the n
 - broad category pain with no segment-specific job
 - opportunities requiring large paid acquisition just to test demand
 - solutions looking for a problem
+
+## Output clarity — mandatory
+Never use an industry label, acronym, or buzzword as the explanation of an idea. The first description must make sense to a smart person who knows nothing about that industry.
+
+For every candidate explain in plain language:
+1. **Who has the problem?**
+2. **What are they literally doing today?**
+3. **What specifically is frustrating, expensive, slow, risky, or emotionally painful?**
+4. **How often does it happen / how large is the cost?**
+5. **What do they currently use or pay for?**
+6. **What could the product change?**
+7. **Why do existing options still fail?**
+
+Only after that may you mention the category name or industry term in parentheses. Expand every acronym on first use.
 
 ## Output
 A candidate is a **problem statement, not a product pitch**. Include:
