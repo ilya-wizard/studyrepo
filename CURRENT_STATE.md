@@ -34,6 +34,26 @@ A candidate cannot become PRIORITY from score alone. Deep validation must explic
 
 A failed gate can keep a candidate in WATCH even when the score is high.
 
+## Fresh scan after marketing-skill integration — 2026-08-30
+A broad fresh scan was run using the new gates. **No new theme passed the scan promotion gate**, so no new formal candidate or score was created.
+
+Closest misses:
+1. **Multi-marketplace settlement reconciliation** — unusually strong measurable pain at a ~$16m ecommerce brand, but insufficient independent evidence for the exact wedge and custom marketplace reconciliation already exists (including Cointab). Reopen only if 3+ mid-market brands identify the same unsupported marketplace/fee logic and one will pay for a manual pilot.
+2. **Cyber Resilience Act incident-reporting workflow** — exceptional timing because 24h/72h reporting obligations begin 11 September 2026, but generic CRA/SBOM/reporting products already exist and no surviving second-order workflow has repeated user evidence yet.
+3. **PE/VC portfolio-company reporting normalization** — recurring heterogeneous monthly reporting is real, but Standard Metrics, Rundit and other portfolio-monitoring products directly cover collection/normalization/reporting. Reopen on explicit incumbent rejection + paid managed-service demand.
+
+Other fresh themes rejected before scoring: COI/vendor insurance tracking, accounting/tax client document chasing, CBAM supplier-data collection, EUDR compliance, PPWR packaging compliance, freight invoice audit, nonprofit post-award grant tracking, and customer-specific PPAP/spec documentation.
+
+Full scan: `reports/scan-2026-08-30-marketing-gates.md`.
+
+### Search implication
+Future scans should bias toward **second-order failures of products people already pay for**, rather than generic categories created by regulation or obvious manual work. Highest-value evidence now includes:
+- paid incumbent + persistent manual exception workflow
+- explicit switching because one workflow remains broken
+- a recent change that breaks incumbent behavior
+- a narrow segment where general-purpose tools are structurally too heavy, expensive or incompatible
+- willingness to pay for a manual/concierge fix before software exists
+
 ## Current ranking after red-team review
 1. **Prior Authorization Evidence-Pack Copilot — 74.8/100 (demoted from 83.1).** Pain and regulatory tailwind remain excellent, but the original wedge is now directly served by Humata Health, EasyPA, Roseate, HiPaaS and Optum/Humata. Do not build generic PA evidence-pack automation. Reopen only around a specialty/payer-specific second-order workflow incumbents demonstrably fail.
 2. **Dental Schedule QA Copilot — 74.0/100 (demoted from 78.2).** Pain remains real, but fresh competitor review shows Dentina booking with practice rules/right providers/operatories plus NexV and DSM scheduling optimization. Continue only through real-practice discovery and paid audit evidence.
@@ -42,8 +62,8 @@ A failed gate can keep a candidate in WATCH even when the score is high.
 ## No current >=78 candidate
 The portfolio currently has no idea strong enough to recommend building. This is intentional: red-team validation should remove attractive-looking ideas when direct competition collapses the wedge.
 
-## Rejected
-- **German E-Invoice Legacy Bridge — rejected 2026-08-29.** Generic conversion/legacy adapter already directly served.
+## Rejected memory
+`data/rejected.jsonl` is the authoritative rejection memory. It now includes the 2026-08-30 fresh-scan themes so generic versions are not rediscovered repeatedly.
 
 ## Decision thresholds
 - <68: watch or reject
