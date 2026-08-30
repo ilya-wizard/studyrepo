@@ -10,7 +10,29 @@ Updated: 2026-08-30
 - Reject generic AI wrappers, hypothetical-demand ideas, one-off complaints, saturated categories without a wedge, and ideas requiring large paid acquisition before validation.
 
 ## Validation pipeline
-Signal -> independent evidence -> buyer/spend -> competition -> distribution -> why now -> <=€500 experiment -> scoring -> red-team -> promote/watch/reject.
+Signal -> customer-research synthesis -> independent evidence -> buyer/spend -> competition -> switching dynamics -> distribution / first-customer signals -> why now -> test price + <=€500 experiment -> scoring -> promotion gates -> red-team -> promote/watch/reject.
+
+## Marketing validation layer — added 2026-08-30
+Selected patterns from `coreyhaines31/marketingskills` are now integrated into the operating protocols:
+- customer research: five signal buckets, confidence, recency, bias checks, customer language
+- competitor profiling: direct/secondary/manual/do-nothing alternatives, pricing, complaints, product direction
+- product marketing: user vs economic buyer, JTBD, switching forces
+- pricing: next-best alternative, value metric hypothesis, explicit test price
+- prospecting: top 10 evidence-backed first-customer prospects before claiming distribution is strong
+- offers/cold email: concrete validation offer + low-friction source-based outreach; never auto-send without explicit authorization
+- marketing loops: self-check, state/deduplication, stop conditions, notify only on meaningful change
+
+The deterministic scoring weights remain unchanged. These additions operate as **promotion gates**, not extra score dimensions.
+
+## Promotion gates
+A candidate cannot become PRIORITY from score alone. Deep validation must explicitly pass:
+1. Research quality
+2. Competition gap
+3. Monetization / test price
+4. Evidence-backed reachability
+5. Disconfirmation / red-team quality
+
+A failed gate can keep a candidate in WATCH even when the score is high.
 
 ## Current ranking after red-team review
 1. **Prior Authorization Evidence-Pack Copilot — 74.8/100 (demoted from 83.1).** Pain and regulatory tailwind remain excellent, but the original wedge is now directly served by Humata Health, EasyPA, Roseate, HiPaaS and Optum/Humata. Do not build generic PA evidence-pack automation. Reopen only around a specialty/payer-specific second-order workflow incumbents demonstrably fail.
@@ -26,8 +48,8 @@ The portfolio currently has no idea strong enough to recommend building. This is
 ## Decision thresholds
 - <68: watch or reject
 - 68–77.9: deep validation / watch
-- >=78: strong candidate
-- >=86: priority candidate
+- >=78: strong candidate only if promotion gates pass
+- >=86: priority candidate only if promotion gates pass
 
 ## Current rule
-Do not build from a score alone. Promotion now requires evidence that a specific underserved workflow survives direct competitor comparison and preferably willingness to pay for a concierge/manual pilot before integrations.
+Do not build from a score alone. Promotion requires evidence that a specific underserved workflow survives direct competitor comparison, a credible first-customer path, and preferably willingness to pay for a concierge/manual pilot before integrations.
