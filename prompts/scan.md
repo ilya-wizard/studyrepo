@@ -1,120 +1,150 @@
-# Signal Scan Protocol
+# Opportunity Hunter Scan Protocol
 
 ## Mission
-Find concrete, recurring problems before inventing solutions. Search broadly across B2B and B2C. Treat public discussion as customer research, not idea inspiration.
+Find product opportunities worth caring about and building, not merely monetizable inefficiencies.
 
-## Search-interest bias
-Commercial strength is necessary but not sufficient. Prefer problems that are intrinsically interesting to understand or build around: human behavior, social connection, creator/prosumer work, AI-native workflows, movement/physical-world activity, learning, travel, collaboration, community, and second-order failures in products people already use.
+The core intersection is:
+1. a meaningful human problem or aspiration,
+2. genuine founder pull — intellectually or creatively interesting enough to work on for years,
+3. a real new lever from modern AI/agents,
+4. credible adoption and monetization.
 
-Deprioritize generic compliance, accounting reconciliation, bookkeeping, procurement, document chasing and other back-office automation unless the evidence is unusually strong AND the product angle is genuinely distinctive. Do not fill the shortlist with commercially valid but boring administrative categories merely because they are easy to find.
+Primary question:
 
-## Search the five signal buckets
-Search several angles for each market/problem area:
-1. **Explicit demand** — "looking for", "recommend a tool", "alternative to", "does anything exist", "how do you handle".
-2. **Pain** — "takes hours", "too manual", "hate", "keeps breaking", "why is this so hard", "biggest frustration".
-3. **Workarounds / spend** — spreadsheets, assistants, agencies, contractors, scripts, Zapier chains, templates, duplicate data entry, fees, wasted labor.
-4. **Switching** — cancellation, migration, competitor frustration, pricing complaints, missing features, "moving off X".
-5. **Timing / trigger events** — regulation, platform/API/pricing changes, hiring, expansion, new workflow, launch, compliance deadline, demographic or technical change.
+> What still works surprisingly badly for people despite the arrival of AI, and what can now be done that was impractical 2–3 years ago?
 
-Do not search only for "business ideas". Adapt queries to the language the target users actually use.
+Separate **problem quality** from **solution quality**. A bad first product concept must not cause a strong underlying problem to be rejected.
 
-## Sources
-Prefer primary discussion sources: Reddit, specialist forums, app reviews, G2/Capterra-style reviews, GitHub issues/discussions, product communities, public Slack/Discord archives when indexed, professional communities, complaint boards, job posts, implementation discussions, changelogs, launch announcements, and search results revealing workaround behavior.
+## Priority domains
+Search broadly, with extra attention to:
+- loneliness and social connection
+- relationships and dating
+- learning and personal development
+- mental wellbeing and self-regulation
+- embodiment, movement and physical development
+- creativity
+- travel and real-world exploration
+- work, meaning and useful productivity
+- money and personal autonomy
+- life administration and decision-making
 
-Use source mix deliberately:
-- B2B/technical: role-specific Reddit, Hacker News, GitHub, reviews, job posts, LinkedIn/public professional discussions.
-- SMB: owner communities, reviews, industry forums, implementation discussions.
-- B2C: app-store reviews, Reddit hobby/lifestyle communities, YouTube/social comments where public discussion is normal.
+Adjacent domains are allowed when the opportunity is unusually strong.
 
-## What to capture per signal
-For each evidence point capture:
-- date
-- source + URL
-- target user / segment clues
-- verbatim quote when short and useful, otherwise faithful summary
-- context: what prompted the complaint/request
-- exact problem / job to be done
-- trigger event if present
-- workaround / current spend / next-best alternative
-- intensity/frequency clues
-- theme: pain / explicit demand / workaround / switching / timing
-- observed evidence vs inference
-- confidence: High / Medium / Low
+## What counts as a strong signal
+Look for repeated evidence that people:
+- struggle with an important outcome,
+- repeatedly fail with current tools or methods,
+- spend money, time, attention or emotional energy trying to solve it,
+- build workarounds or combine multiple products,
+- abandon existing products because they do not create the desired outcome,
+- explicitly ask for something that does not exist,
+- exhibit a behavior that a new AI capability could materially improve.
 
-Never qualify from a search snippet alone when the original source is available.
+Search Reddit, specialist forums, app reviews, product reviews, research, creator communities, GitHub discussions, public professional discussions, niche communities, and other primary sources.
 
-## Research quality guardrails
-### Confidence
-- **High** — theme appears in 3+ independent sources, is unprompted, and is consistent within a segment.
-- **Medium** — appears in 2 sources, or is strongly evidenced but limited to one segment.
-- **Low** — single source, ambiguous context, or mostly inference.
+Do not confuse loud complaints with important problems. Prefer repeated behavior over stated preferences.
 
-### Recency
-Weight recent evidence more heavily, especially for software, regulation, platform changes and rapidly changing markets. Old evidence can support chronic pain but should not be treated as current demand without a fresh signal.
+## AI-leverage test
+For every promoted candidate, answer:
+- What specifically became possible or economically viable because of current AI/agents?
+- Could this product have been built almost as well in 2022–2023?
+- Is AI core to the product behavior, or merely a chat interface / content-generation layer?
+- Does memory, personalization, multimodality, agentic action, reasoning, simulation, or cheap generation create a qualitatively different product?
 
-### Bias checks
-- review sites overrepresent strong opinions
-- support/community sources overrepresent problems
-- Reddit/HN skew technical and skeptical
-- job posts show organizational intent, not necessarily product demand
-- one viral complaint is not a market
+If AI is cosmetic, penalize heavily.
 
-Do not average across materially different segments. A pain that is strong for one narrow segment is better than a vague pain across everyone.
+## Human-importance test
+Ask:
+- Does solving this materially improve someone's capability, relationships, wellbeing, autonomy, creativity, learning, income, or experience of life?
+- Is the outcome meaningful enough that users already invest effort in it?
+- Is this more than a small convenience or minor time saving?
 
-## Synthesis
-After collection:
-1. Cluster by problem/theme and segment.
-2. Rank by **frequency × intensity × recency**.
-3. Identify trigger events and repeated customer vocabulary.
-4. Separate direct observation from interpretation.
-5. Flag contradictions and evidence gaps.
-6. Record representative quotes/links so the candidate remains auditable.
+A narrow problem can still be important. A large market with trivial human value is not automatically attractive.
 
-## Scan promotion gate
-A theme can move from raw signal to candidate only when:
-- there are at least 3 independent evidence points (prefer 5+ before deep validation), and
-- the target user can be named precisely, and
-- at least one strong commercial signal exists: current spend/workaround, explicit demand, switching behavior, measurable loss, or a forcing trigger, and
-- no obvious incumbent already solves the exact workflow well.
+## Founder-pull test
+Ask:
+- Is the problem rich enough to keep learning about?
+- Is there room for product invention rather than only implementation?
+- Would building it create curiosity rather than obligation?
+- Does the problem involve human behavior, systems, interaction, or a genuinely new product model?
 
-A regulation/platform change can enter early with fewer complaints only if the new mandatory work is directly evidenced and the buyer is clear.
+Founder pull is a first-class criterion, not a tie-breaker.
 
-## Immediate rejection / heavy penalty
-- generic AI wrappers
-- saturated ideas without a narrow wedge
-- one viral post with no corroboration
-- "nice to have" novelty
-- invented personas or hypothetical demand
-- unclear buyer/user
-- broad category pain with no segment-specific job
-- opportunities requiring large paid acquisition just to test demand
-- solutions looking for a problem
+## Strongly deprioritize
+Unless there is an unusually large human or strategic consequence, down-rank:
+- generic compliance/regulation tooling
+- invoicing/bookkeeping
+- CRM and commodity workflow automation
+- procurement/document chasing
+- back-office efficiency products
+- vertical SaaS whose main benefit is administrative convenience
+- products whose pitch is mainly “save a few minutes”
 
-## Output clarity — mandatory
-Never use an industry label, acronym, or buzzword as the explanation of an idea. The first description must make sense to a smart person who knows nothing about that industry.
+Reject generic AI wrappers and cosmetic AI differentiation.
 
-For every candidate explain in plain language:
-1. **Who has the problem?**
-2. **What are they literally doing today?**
-3. **What specifically is frustrating, expensive, slow, risky, or emotionally painful?**
-4. **How often does it happen / how large is the cost?**
-5. **What do they currently use or pay for?**
-6. **What could the product change?**
-7. **Why do existing options still fail?**
+## Evidence capture
+For each signal capture:
+- date + source URL
+- precise user/segment
+- observed behavior or complaint
+- current workaround / spend / effort
+- intensity and recurrence clues
+- desired outcome
+- why current alternatives fail
+- what is observed vs inferred
+- confidence
 
-Only after that may you mention the category name or industry term in parentheses. Expand every acronym on first use.
+Prefer 3+ independent sources before promotion and 5+ before serious validation where feasible.
+
+## Candidate synthesis
+For every candidate explain plainly:
+1. Who has the problem?
+2. What are they trying to achieve?
+3. What happens today instead?
+4. Why does this matter in their life?
+5. What do they already spend — money, time, attention or emotional effort?
+6. Why do existing solutions fail?
+7. What new AI lever exists now?
+8. What product directions are plausible? Keep multiple directions open when appropriate.
+9. What behavior change would the product require?
+10. How could the first users be reached?
+11. How might it monetize?
+12. What would make the opportunity false?
+
+## Promotion gate
+Promote only when:
+- the underlying problem is meaningful,
+- evidence is repeated and segment-specific,
+- founder pull is high enough to justify further attention,
+- AI provides a real new lever,
+- existing alternatives are meaningfully inadequate,
+- adoption does not require implausible behavior change,
+- there is at least a plausible distribution and monetization path.
+
+Do not promote an idea simply because a buyer exists.
+
+## Scoring
+Use `config/scoring.json`.
+
+Always report these three summary scores:
+- **Human importance**
+- **Founder pull**
+- **Business potential**
+
+The numerical score is subordinate to judgment. A commercially strong but uninspiring administrative tool should not become PRIORITY.
 
 ## Output
-A candidate is a **problem statement, not a product pitch**. Include:
-- problem + precise target user
-- functional job to be done
-- repeated evidence and confidence
-- trigger events / why now
-- alternatives, workarounds and existing spend
-- customer language
-- preliminary competitive gap
-- plausible monetization
-- realistic acquisition path
-- key uncertainties and risks
+Keep candidate reports concise and concrete:
+- problem + target user
+- why it matters
+- strongest evidence
+- current alternatives and failure mode
+- why now / AI lever
+- possible product direction(s)
+- behavior-change burden
+- monetization + acquisition
+- <= €500 validation test
+- strongest argument against
+- Human importance / Founder pull / Business potential
 
-Do not invent missing fields. Mark them unknown and send them to deep validation.
+If nothing feels genuinely worth building, return no candidate rather than filling the backlog with mediocre ideas.
