@@ -1,180 +1,226 @@
-# Deep Validation Protocol
+# Opportunity Hunter Deep Validation Protocol
 
-Only run this protocol for candidates that survive initial scoring. The purpose is to disconfirm weak opportunities, not to make every candidate look investable.
+Run this only for candidates that survive the initial Opportunity Hunter scan. The goal is to disconfirm weak opportunities, not to make every candidate look investable.
 
-## 1. Build the market brief
-Before researching the solution, make the candidate specific enough to reject weak matches:
-- primary user
-- economic buyer (if different)
-- functional job to be done
-- core pain and measurable cost
-- trigger event / why now
-- current workaround / next-best alternative
-- disqualifiers: who looks similar but does not have the problem
+## 1. Validate the problem before the product
+Define:
+- precise user / segment
+- desired human outcome
+- current behavior and workaround
+- why the problem matters in real life
+- frequency / intensity
+- what users already invest: money, time, attention, emotional effort
+- what would make the problem unimportant or non-urgent
 
-For B2B with multiple stakeholders, distinguish user, champion, decision maker, financial buyer and technical influencer when relevant.
+Do not let a weak first solution invalidate a strong underlying problem.
 
-## 2. Problem reality / customer research
-Find at least 5 independent evidence points when possible. Distinguish frequency from intensity and chronic pain from event-triggered pain.
+## 2. Evidence quality
+Find at least 5 independent evidence points when feasible.
 
-For each theme:
-- segment
-- frequency
-- intensity
-- recency
-- representative customer language
-- confidence: High / Medium / Low
+Distinguish:
+- recurring behavior vs stated preference
+- chronic pain vs one-off frustration
+- important outcome vs mere convenience
+- segment-specific pattern vs generic complaint
 - observed evidence vs inference
 
-Prefer unprompted behavior and existing workarounds over survey-style stated intent. Flag contradictions instead of averaging them away.
+Flag contradictions instead of averaging them away.
 
-## 3. Existing spend and value
-Look for money already being spent on software, services, contractors, consultants, assistants, ads, hardware, fees, wasted labor, rework, delays, lost revenue, or avoidable losses.
+## 3. Human importance
+Assess whether solving the problem materially affects one or more of:
+- relationships / social connection
+- autonomy
+- wellbeing / self-regulation
+- learning / development
+- creativity
+- movement / physical capability
+- meaningful work / income
+- real-world experience / exploration
+- decision quality / life administration
 
-Estimate:
-- next-best alternative and its price/cost
-- value of solving the problem
-- plausible value metric (per seat, location, transaction, workflow, case, usage, outcome, etc.)
-- a **test price** chosen to generate learning, not a theoretically perfect pricing model
+A large market with trivial human impact should score lower than a narrower but genuinely important problem.
 
-Do not treat cheap signups as strong validation. The goal is evidence that the target buyer will pay a commercially meaningful price.
+## 4. Founder pull
+Test whether the opportunity is rich enough to care about building for years:
+- Is there genuine curiosity in understanding the problem?
+- Is there meaningful product invention, not just implementation?
+- Does it involve human behavior, interaction, systems, or a new product model?
+- Is there room for learning and iteration rather than a one-shot feature?
 
-## 4. Competitive landscape
-Map four categories:
-1. **Direct** — same solution to the same problem.
-2. **Secondary** — different solution to the same problem.
-3. **Indirect/manual** — spreadsheet, assistant, agency, internal process, custom script.
-4. **Do nothing** — tolerate the pain.
+Founder pull is a core criterion, not a bonus.
 
-For important competitors capture facts, not impressions:
-- target audience and positioning
-- core capabilities
-- pricing / packaging if available
-- integrations / implementation burden
-- recent product direction or changelog signals
-- repeated customer praise and complaints
-- evidence source + date
+## 5. AI leverage
+Answer explicitly:
+- What is newly possible or economically viable because of current AI/agents?
+- Could the same product have been almost as good in 2022–2023?
+- Is AI core to the value, or cosmetic?
+- Does memory, personalization, multimodality, reasoning, simulation, generation, or agentic action create a qualitatively different experience?
 
-A missing feature is **not automatically a wedge**. The gap must matter to a specific segment and ideally recur in reviews, switching behavior, lost deals, workarounds, or customer interviews.
+Penalize generic wrappers and chat interfaces around old products.
 
-## 5. Wedge and switching dynamics
-Define the narrowest user + workflow where a new entrant could be meaningfully better. "Uses AI" is not a wedge.
+## 6. Existing alternatives and failure modes
+Map:
+1. direct products
+2. indirect products
+3. manual / human workaround
+4. doing nothing
 
-Run the JTBD switching forces:
-- **Push** — what makes the current situation intolerable?
-- **Pull** — what outcome attracts the buyer to a new approach?
-- **Habit** — what keeps them on the current workflow?
-- **Anxiety** — what makes switching risky?
+For each meaningful alternative capture:
+- who it serves
+- what outcome it promises
+- how users actually use it
+- repeated praise / frustration
+- pricing if relevant
+- why it still fails to create the desired outcome
 
-If Push + Pull are weak or Habit + Anxiety are structurally high, penalize the opportunity even when complaints are frequent.
+A missing feature is not automatically a wedge. The failure must matter to the user.
 
-## 6. First-customer evidence / distribution
-Do not stop at "these people are reachable." Find evidence-backed prospects.
+## 7. Behavior-change burden
+Many good-sounding consumer ideas fail because they require users to behave differently.
 
-Build two layers:
-- **Top 10 demand-signal prospects** — each has a cited recent public pain, switching, workaround, or timing signal.
-- **20–100 broader reachable users/accounts** — plausible ICP pool for follow-on outreach.
+Assess:
+- new habit required
+- frequency of required engagement
+- setup burden
+- trust / privacy burden
+- social awkwardness
+- switching cost
+- whether value appears before motivation drops
 
-A demand-signal prospect without cited evidence belongs outside the primary shortlist.
+A product with weak retention dynamics must be heavily penalized even if initial interest is high.
 
-For each top prospect capture:
-- public professional/company identity where appropriate
-- source + date
-- concise pain/timing signal
-- stage: high intent / problem aware / trigger present
-- natural outreach channel
-- confidence
+## 8. Distribution
+Identify a realistic first-user path.
 
-For B2C, do not convert personal distress posts into private cold outreach. Use normal public/community interaction norms and validate demand through opt-in channels.
+For B2C / prosumer:
+- communities where the problem is already discussed
+- creators / practitioners / schools / groups with audience access
+- organic loops, referrals, content, community or utility-based distribution
+- paid acquisition only if economics are plausible
 
-## 7. Validation offer
-Turn the wedge into something a buyer can actually say yes or no to before building the product.
+For B2B:
+- specific buyer and user
+- credible outreach channel
+- trigger events or public demand signals
 
-Define:
-- **core deliverable** — what they get
-- **dream outcome** — the concrete result
-- **time to first value** — how quickly they see useful output
-- **customer effort** — what they must provide/do
-- **risk reversal** — small pilot, pay-on-delivery, fixed scope, cancellation, or other honest mechanism where appropriate
-- **test price**
-- **one low-friction CTA**
+Do not accept “users are reachable” without a concrete channel.
 
-Do not use fake scarcity, exaggerated guarantees, invented proof or discounting just to manufacture demand.
+## 9. Monetization
+Commercial strength still matters, but it is not the first filter.
 
-## 8. <= €500 validation experiment
-Design the cheapest credible test before full product build. Prefer, in order when applicable:
-1. direct conversations around the evidenced workflow
-2. paid concierge/manual service
-3. paid audit / report / done-for-you output
-4. manual prototype or spreadsheet/browser tool
-5. landing page + highly targeted outreach
-6. fake-door test where ethically appropriate
-7. narrow technical/hardware proof-of-concept
+Look for:
+- current spend
+- paid alternatives
+- services users already buy
+- recurring behavior with monetary value
+- willingness to pay for outcome, not novelty
 
-The experiment must specify:
+Define a realistic first pricing hypothesis and what evidence would prove it wrong.
+
+## 10. Defensibility / compounding advantage
+Ask whether the product can become meaningfully better over time via:
+- personal memory / longitudinal context
+- proprietary interaction data
+- personalization
+- network effects
+- community
+- workflow embedding
+- accumulated models / feedback loops
+
+Do not claim a moat from “AI” alone.
+
+## 11. <= €500 validation experiment
+Design the cheapest credible test before building the full product.
+
+Prefer, when applicable:
+1. interviews around evidenced behavior
+2. concierge/manual service
+3. Wizard-of-Oz prototype
+4. narrow prototype testing one risky interaction
+5. landing page + targeted opt-in traffic
+6. community experiment
+7. paid pilot or preorder when appropriate
+
+Specify:
 - hypothesis
 - target segment
-- who will be contacted and why
-- offer + test price
+- prototype / offer
 - success metric
 - failure threshold
 - budget
-- duration / number of attempts
-- what decision follows each outcome
+- number of attempts/users
+- next decision
 
-Draft outreach using: **specific observation -> exact problem -> one-sentence offer -> low-friction question**. Keep it short. Never auto-send without explicit authorization.
+Validate the riskiest assumption, not the easiest one.
 
-## 9. Failure test / red team
-Actively search for reasons the opportunity is bad:
-- incumbents already solving the exact wedge
-- failed startups or failed feature attempts
-- low retention / weak repeat use
-- buyers complaining but not paying
-- regulation or liability
-- incumbent bundling
-- implementation/integration burden
-- poor margins
+## 12. Red team
+Actively search for reasons the opportunity should die:
+- existing product already solves it well
+- failed startups in the same space
+- low retention / novelty decay
+- users say they want it but do not change behavior
+- AI does not materially improve outcome
+- trust / privacy / liability barrier
 - impossible distribution
-- high switching cost / organizational resistance
-- market too small or too fragmented
-- behavior-change burden
+- weak willingness to pay
+- high switching cost
+- problem is emotionally salient but commercially weak
+- founder pull disappears after deeper research
 
-State the strongest case **against** the opportunity before scoring it.
+State the strongest case against the opportunity before scoring it.
 
-## 10. Promotion gates
-A high numerical score alone is insufficient. Before PRIORITY/VALIDATE, explicitly mark these gates pass/fail:
+## 13. Decision gates
+Before PRIORITY / VALIDATE, mark pass/fail:
 
-### Research quality gate
-- 5+ useful independent evidence points when feasible
-- segment-specific theme, not averaged across unrelated users
-- recent evidence for fast-changing markets
+### Human importance gate
+The problem materially matters in users' lives.
 
-### Competition gap gate
-- exact workflow compared against direct + indirect alternatives
-- wedge supported by customer evidence, not feature-table speculation
+### Founder pull gate
+The opportunity remains genuinely interesting after deeper research.
+
+### AI leverage gate
+AI creates a real qualitative or economic step change.
+
+### Evidence gate
+The problem is supported by repeated, segment-specific evidence.
+
+### Alternative-failure gate
+Current options fail in a way users actually care about.
+
+### Behavior gate
+Adoption and retention do not require implausible behavior change.
+
+### Distribution gate
+A plausible first-user channel exists.
 
 ### Monetization gate
-- current spend, measurable value, or credible paid test
-- test price specified
-
-### Reachability gate
-- evidence-backed first-customer shortlist exists
-- realistic channel to reach them
+There is credible value capture or a testable paid hypothesis.
 
 ### Disconfirmation gate
-- strongest failure cases actively researched
-- evidence that would reverse the decision is stated
+The strongest failure cases were actively researched.
 
-A candidate failing a gate can remain WATCH even with a high score.
-
-## 11. Decision
+## 14. Decision
 Return one of:
-- **PRIORITY** — strong evidence, gates pass, worth testing now
-- **VALIDATE** — promising but one key uncertainty remains and has a concrete experiment
-- **WATCH** — real problem but weak timing, distribution, monetization, switching dynamics, or wedge
-- **REJECT** — evidence does not support further investment
+- **PRIORITY** — genuinely worth testing now
+- **VALIDATE** — promising, with one or two concrete uncertainties to test
+- **WATCH** — meaningful problem, but timing / behavior / business / AI leverage is not strong enough yet
+- **REJECT** — not worth further attention
 
-The report must state:
+Always include:
+- problem
+- who feels it
+- why it matters
+- strongest evidence
+- why current alternatives fail
+- what became possible now
+- possible product direction(s)
+- behavior-change risk
+- distribution
+- monetization
+- <= €500 validation test
+- strongest argument against
+- **Human importance / Founder pull / Business potential**
 - what evidence would change the decision
-- the next cheapest action
 - what not to build yet
+
+If nothing feels genuinely worth building, prefer no recommendation over a mediocre one.
