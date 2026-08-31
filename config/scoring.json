@@ -1,25 +1,33 @@
 {
   "weights": {
-    "pain_intensity": 0.16,
-    "frequency": 0.13,
-    "willingness_to_pay": 0.16,
+    "human_importance": 0.18,
+    "founder_pull": 0.16,
+    "ai_leverage": 0.14,
     "evidence_quality": 0.14,
-    "reachability": 0.10,
-    "competition_gap": 0.10,
-    "why_now": 0.07,
-    "buildability": 0.06,
-    "founder_interest": 0.08
+    "problem_intensity": 0.10,
+    "existing_behavior_or_spend": 0.08,
+    "distribution": 0.07,
+    "monetization": 0.06,
+    "competition_gap": 0.04,
+    "buildability": 0.03
   },
   "penalties": {
-    "generic_ai_wrapper": 15,
-    "saturated_without_wedge": 20,
-    "single_source_only": 15,
-    "unclear_buyer": 15,
+    "generic_ai_wrapper": 20,
+    "cosmetic_ai_leverage": 15,
+    "boring_admin_problem_without_large_consequence": 20,
+    "saturated_without_wedge": 18,
+    "unrealistic_behavior_change": 15,
+    "single_source_only": 12,
     "validation_over_budget": 10
   },
   "thresholds": {
-    "deep_validate": 68,
-    "notify": 78,
-    "priority": 86
-  }
+    "deep_validate": 70,
+    "notify": 80,
+    "priority": 88
+  },
+  "report_scores": [
+    "Human importance",
+    "Founder pull",
+    "Business potential"
+  ]
 }
