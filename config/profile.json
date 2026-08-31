@@ -1,31 +1,52 @@
 {
-  "markets": ["B2B", "B2C"],
+  "markets": ["B2C", "B2B"],
   "mvp_time_constraint": "flexible",
   "max_validation_budget_eur": 500,
-  "allowed_domains": ["health", "dating", "social", "creator", "AI-native workflows", "developer tools", "movement", "travel", "enterprise", "hardware", "marketplaces", "other"],
-  "boring_is_ok_if_compelling": true,
-  "priority": "interesting ideas with real evidence, a product people can intuitively care about, and plausible monetization",
+  "mission": "Find products worth caring about and building, not merely monetizable inefficiencies.",
+  "primary_question": "What still works surprisingly badly for people despite AI, and what can now be done that was impractical 2-3 years ago?",
+  "core_intersection": [
+    "meaningful human problem or aspiration",
+    "strong founder pull and intellectual/creative interest",
+    "real new leverage from modern AI or agents",
+    "credible path to adoption and monetization"
+  ],
+  "priority_domains": [
+    "loneliness and social connection",
+    "relationships and dating",
+    "learning and personal development",
+    "mental wellbeing and self-regulation",
+    "embodiment, movement and physical development",
+    "creativity",
+    "travel and real-world exploration",
+    "work, meaning and useful productivity",
+    "money and personal autonomy",
+    "life administration and decision-making"
+  ],
   "prefer": [
-    "human behavior and social connection problems",
-    "products that change what people can do, not just how they file paperwork",
-    "AI-native workflows created by agents and new interaction patterns",
-    "creator and prosumer problems with visible user emotion or repeated workarounds",
-    "physical-world, movement, travel, learning, collaboration and community problems",
-    "second-order failures in products people already use and pay for"
+    "products that materially change a person's experience, capability, behavior or options",
+    "problems where people already invest money, time, attention or emotional energy",
+    "AI-native products that were materially harder, worse or uneconomic 2-3 years ago",
+    "problems with repeated failed attempts or clearly inadequate existing products",
+    "products with a plausible path to becoming more valuable through memory, personalization, data or network effects",
+    "opportunities where the underlying problem remains strong even if the first product concept is wrong"
   ],
   "deprioritize_unless_exceptional": [
     "generic compliance and regulation tooling",
-    "accounting reconciliation and bookkeeping operations",
-    "procurement and document-chasing workflows",
-    "generic back-office automation",
-    "categories that are commercially valid but hard to care about as a product"
+    "invoicing and bookkeeping",
+    "CRM and generic workflow automation",
+    "procurement and document chasing",
+    "narrow back-office efficiency tools",
+    "commodity vertical SaaS",
+    "minor time-saving problems with little human or strategic consequence"
   ],
   "avoid": [
     "generic AI wrappers",
+    "cosmetic AI differentiation",
     "ideas supported only by hypothetical demand",
     "heavily saturated categories without a clear wedge",
     "one-off complaints",
+    "solutions requiring unrealistic behavior change",
     "products requiring large paid-acquisition budgets before validation",
-    "buzzword-only candidate descriptions that do not explain the user's concrete problem"
+    "buzzword-only candidate descriptions"
   ]
 }
