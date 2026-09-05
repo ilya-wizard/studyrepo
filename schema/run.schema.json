@@ -1,0 +1,103 @@
+{
+  "type": "object",
+  "required": [
+    "run_id",
+    "date",
+    "kind",
+    "criteria_version",
+    "cycle_id",
+    "audiences",
+    "queries",
+    "source_urls",
+    "new_independent_behavioral_signals",
+    "changed_candidate_ids",
+    "decision_changes",
+    "no_change_reason",
+    "next_question",
+    "experiment_progress",
+    "notified_event_keys"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "scan",
+        "review",
+        "maintenance"
+      ]
+    },
+    "criteria_version": {
+      "const": "2.0"
+    },
+    "cycle_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audiences": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "queries": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "source_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "new_independent_behavioral_signals": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "changed_candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "decision_changes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "no_change_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "next_question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "experiment_progress": {
+      "type": "object"
+    },
+    "notified_event_keys": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

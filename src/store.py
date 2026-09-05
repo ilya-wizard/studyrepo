@@ -1,75 +1,56 @@
-from __future__ import annotations
-
+"""Canonical storage. Preserve candidate identity across lifecycle stages."""
 import hashlib
 import json
+import os
 import re
+import tempfile
 from pathlib import Path
-from typing import Any, Dict, Iterable, List
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
+DATA = ROOT / 'data'
+REGISTRY = DATA / 'opportunities.jsonl'
 
+def read_jsonl(path):
+    path = Path(path)
+    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()] if path.exists() else []
 
-def normalize_text(text: str) -> str:
-    text = text.lower().strip()
-    text = re.sub(r"https?://\S+", "", text)
-    text = re.sub(r"[^a-z0-9а-яёіїєґ\s-]", " ", text, flags=re.IGNORECASE)
-    return re.sub(r"\s+", " ", text).strip()
+def write_jsonl(path, rows):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=path.parent, delete=False) as handle:
+        handle.write(''.join(json.dumps(row, ensure_ascii=False, sort_keys=True) + '\n' for row in rows))
+        temp = handle.name
+    os.replace(temp, path)
 
+def normalize_text(text):
+    return re.sub(r'\s+', ' ', re.sub(r'[^\w\s-]', ' ', text.lower())).strip()
 
-def candidate_key(candidate: Dict[str, Any]) -> str:
-    canonical = "|".join(
-        normalize_text(str(candidate.get(field, "")))
-        for field in ("problem", "target_user", "job_to_be_done")
-    )
-    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()[:20]
+def candidate_key(candidate):
+    canonical = '|'.join(normalize_text(str(candidate.get(k, ''))) for k in ('problem', 'target_user', 'job_to_be_done'))
+    return hashlib.sha256(canonical.encode()).hexdigest()[:20]
 
-
-def read_jsonl(path: Path) -> List[Dict[str, Any]]:
-    if not path.exists():
-        return []
-    rows: List[Dict[str, Any]] = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            rows.append(json.loads(line))
-    return rows
-
-
-def append_unique(candidate: Dict[str, Any], filename: str = "candidates.jsonl") -> bool:
-    """Append candidate if its deterministic key is new. Returns True if written."""
-    DATA.mkdir(parents=True, exist_ok=True)
-    path = DATA / filename
-    key = candidate.setdefault("candidate_id", candidate_key(candidate))
-    existing = {row.get("candidate_id") for row in read_jsonl(path)}
-    if key in existing:
-        return False
-
-    with path.open("a", encoding="utf-8") as fh:
-        fh.write(json.dumps(candidate, ensure_ascii=False, sort_keys=True) + "\n")
-    return True
-
-
-def merge_evidence(candidate_id: str, evidence: Iterable[Dict[str, Any]]) -> Dict[str, Any] | None:
-    """Merge new evidence into an existing candidate, deduplicating by URL/source+quote."""
-    path = DATA / "candidates.jsonl"
+def upsert(candidate, path=REGISTRY):
+    if not candidate.get('candidate_id'):
+        raise ValueError('Stable candidate_id required; search registry before creating one')
     rows = read_jsonl(path)
-    target = next((row for row in rows if row.get("candidate_id") == candidate_id), None)
+    existing = next((i for i, row in enumerate(rows) if row['candidate_id'] == candidate['candidate_id']), None)
+    if any(row['candidate_id'] != candidate['candidate_id'] and candidate_key(row) == candidate_key(candidate) for row in rows):
+        raise ValueError('Same problem and segment already exists under another ID')
+    if existing is None:
+        rows.append(candidate)
+    else:
+        rows[existing] = candidate
+    write_jsonl(path, rows)
+
+def merge_evidence(candidate_id, evidence, path=REGISTRY):
+    rows = read_jsonl(path)
+    target = next((row for row in rows if row['candidate_id'] == candidate_id), None)
     if target is None:
         return None
-
-    current = target.setdefault("evidence", [])
-    seen = {
-        (item.get("url") or "", normalize_text(str(item.get("quote") or item.get("summary") or "")))
-        for item in current
-    }
+    seen = {item['evidence_id'] for item in target['evidence']}
     for item in evidence:
-        sig = (item.get("url") or "", normalize_text(str(item.get("quote") or item.get("summary") or "")))
-        if sig not in seen:
-            current.append(item)
-            seen.add(sig)
-
-    path.write_text(
-        "\n".join(json.dumps(row, ensure_ascii=False, sort_keys=True) for row in rows) + "\n",
-        encoding="utf-8",
-    )
+        if item['evidence_id'] not in seen:
+            target['evidence'].append(item)
+            seen.add(item['evidence_id'])
+    write_jsonl(path, rows)
     return target

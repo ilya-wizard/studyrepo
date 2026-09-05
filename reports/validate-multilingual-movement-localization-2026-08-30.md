@@ -1,3 +1,5 @@
+> Historical research. Current stages and scores live in `data/opportunities.jsonl` and generated `CURRENT_STATE.md`. Reopen original sources before relying on claims; historic assistant interest ratings are not user feedback.
+
 # Validation — Multilingual movement creator localization studio
 
 Date: 2026-08-30

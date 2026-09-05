@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "required": [
+    "observation_id",
+    "date",
+    "candidate_id",
+    "audience_id",
+    "source_ref",
+    "observed_fact",
+    "interpretation",
+    "safe_to_share",
+    "confidence",
+    "follow_up_question"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "audience_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_fact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "interpretation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "safe_to_share": {
+      "const": true
+    },
+    "confidence": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "follow_up_question": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

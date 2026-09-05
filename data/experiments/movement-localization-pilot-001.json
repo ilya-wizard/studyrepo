@@ -1,0 +1,35 @@
+{
+  "experiment_id": "movement-localization-pilot-001",
+  "candidate_id": "multilingual-movement-creator-localization",
+  "status": "prepared",
+  "selected_by_user": false,
+  "hypothesis": "Established movement creators will commit money to a narrowly scoped localization pilot, and target-language learners will find the sample usable.",
+  "riskiest_assumptions": [
+    "Creators want another-language sales now, rather than someday.",
+    "There is an identifiable distribution path to target-language buyers.",
+    "Movement-specific QA improves usefulness enough to justify payment."
+  ],
+  "budget_eur": {
+    "production_tools": 40,
+    "sample_qa": 160,
+    "learner_tests": 100,
+    "contingency": 100
+  },
+  "budget_cap_eur": 500,
+  "target_attempts": 20,
+  "minimum_interviews": 5,
+  "offer_price_eur": 500,
+  "sample_minutes": 5,
+  "pilot_deliverable_minutes": 30,
+  "pass_rule": "From 20 qualified prospects: >=5 substantive conversations, >=3 independently evidenced recent expansion attempts, and >=1 paid pilot at EUR500; usable sample and concrete distribution path required.",
+  "fail_rule": "After 20 qualified contacts and one follow-up: no paid commitment -> stop current offer and inspect objections. Fewer than 5 conversations -> channel inconclusive, not problem disproved.",
+  "secondary_commitment_rule": "Signed revenue-share/rights commitment is partnership evidence only; it does not pass paid-demand gate.",
+  "results": [],
+  "spend_eur": 0,
+  "actual_contacts": 0,
+  "actual_interviews": 0,
+  "actual_paid_pilots": 0,
+  "completed_at": null,
+  "kit": "experiments/movement-localization-pilot-001.md",
+  "next_action": "Prepare rights-cleared sample only after creator supplies/authorizes content; personalized messages remain drafts until sending is explicitly authorized."
+}

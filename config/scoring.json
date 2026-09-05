@@ -4,7 +4,7 @@
     "founder_pull": 0.16,
     "ai_leverage": 0.14,
     "evidence_quality": 0.14,
-    "problem_intensity": 0.10,
+    "problem_intensity": 0.1,
     "existing_behavior_or_spend": 0.08,
     "distribution": 0.07,
     "monetization": 0.06,
@@ -29,5 +29,21 @@
     "Human importance",
     "Founder pull",
     "Business potential"
-  ]
+  ],
+  "version": "2.0",
+  "schema_version": "2.0",
+  "commercial_gates": [
+    "human_importance",
+    "founder_pull",
+    "ai_leverage",
+    "evidence",
+    "alternative_failure",
+    "behavior",
+    "distribution",
+    "monetization",
+    "disconfirmation"
+  ],
+  "missing_policy": "null; no total score until all dimensions are assessed",
+  "founder_pull_source": "explicit user rating in data/feedback.jsonl only",
+  "thresholds_apply_to": "complete assessments only; never block exploration or a cheap uncertainty test"
 }

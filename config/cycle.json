@@ -1,0 +1,36 @@
+{
+  "cycle_id": "2026-09-07-initial",
+  "start_date": "2026-09-07",
+  "review_date": "2026-09-13",
+  "audiences": [
+    {
+      "id": "movement-creators",
+      "segment": "Established yoga/Pilates/movement teachers with paid video libraries",
+      "question": "When did they last attempt another-language sales, what blocked it, and who would buy the result?"
+    },
+    {
+      "id": "offline-community-operators",
+      "segment": "Organizers of recurring movement or social communities with an existing audience",
+      "question": "Which real attempts to generate second/third meetings failed, and why?"
+    }
+  ],
+  "focus_share": 0.8,
+  "adjacent_share": 0.2,
+  "max_shortlist": 3,
+  "max_active_experiments": 1,
+  "prepared_experiment_id": "movement-localization-pilot-001",
+  "active_experiment_id": null,
+  "selection_status": "awaiting_user_preference",
+  "stop_rule": "After two focused passes with no material new evidence, change source/audience or prepare field test; do not recycle searches.",
+  "cadence": {
+    "timezone": "Europe/Berlin",
+    "scan_days": [
+      "TU",
+      "FR"
+    ],
+    "scan_time": "13:00",
+    "review_day": "SU",
+    "review_time": "11:00"
+  },
+  "updated_at": "2026-09-05"
+}

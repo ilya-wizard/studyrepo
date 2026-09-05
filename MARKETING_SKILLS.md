@@ -1,3 +1,7 @@
+# Current operating precedence — 2026-09-05
+
+This document preserves the adapted marketing methods. For current stages, gates, scoring and source requirements use `prompts/`, `config/scoring.json` and `README.md`. The former five-gate promotion rule below is historical; the nine current gates apply to commercial evaluation, not early discovery. Prospect fit is not buying intent.
+
 # Marketing Skills Integration
 
 This repository selectively adapts research and validation patterns from:

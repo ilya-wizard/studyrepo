@@ -1,5 +1,8 @@
 {
-  "markets": ["B2C", "B2B"],
+  "markets": [
+    "B2C",
+    "B2B"
+  ],
   "mvp_time_constraint": "flexible",
   "max_validation_budget_eur": 500,
   "mission": "Find products worth caring about and building, not merely monetizable inefficiencies.",
@@ -48,5 +51,23 @@
     "solutions requiring unrealistic behavior change",
     "products requiring large paid-acquisition budgets before validation",
     "buzzword-only candidate descriptions"
-  ]
+  ],
+  "criteria_version": "2.0",
+  "founder_feedback_policy": "User statements only; never infer a numeric founder rating. Record unknown until rated. Learn rejection reasons, not blanket domain bans.",
+  "research_allocation": {
+    "focused_audiences": 0.8,
+    "adjacent_discovery": 0.2
+  },
+  "first_cycle_audiences": [
+    "Established movement teachers with paid video libraries",
+    "Organizers of recurring offline communities"
+  ],
+  "stages": [
+    "explore",
+    "validate",
+    "experiment",
+    "watch",
+    "reject"
+  ],
+  "max_active_experiments": 1
 }

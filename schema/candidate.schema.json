@@ -1,149 +1,389 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Problem Hunter Candidate",
   "type": "object",
-  "required": [
-    "candidate_id",
-    "title",
-    "problem",
-    "target_user",
-    "evidence",
-    "validation_experiment"
-  ],
   "properties": {
-    "candidate_id": {"type": "string", "minLength": 3},
-    "title": {"type": "string"},
-    "problem": {"type": "string"},
-    "target_user": {"type": "string"},
-    "economic_buyer": {"type": ["string", "null"]},
-    "job_to_be_done": {"type": "string"},
-    "solution_wedge": {"type": "string"},
-
+    "schema_version": {
+      "const": "2.0"
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "problem": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_user": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "explore",
+        "validate",
+        "experiment",
+        "watch",
+        "reject"
+      ]
+    },
+    "solution_directions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "criteria_version": {
+          "const": "2.0"
+        },
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "human_importance": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "founder_pull": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "ai_leverage": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "evidence_quality": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "problem_intensity": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "existing_behavior_or_spend": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "distribution": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "monetization": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "competition_gap": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "buildability": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            }
+          },
+          "required": [
+            "human_importance",
+            "founder_pull",
+            "ai_leverage",
+            "evidence_quality",
+            "problem_intensity",
+            "existing_behavior_or_spend",
+            "distribution",
+            "monetization",
+            "competition_gap",
+            "buildability"
+          ]
+        },
+        "founder_feedback_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "criteria_version",
+        "dimensions",
+        "founder_feedback_id",
+        "rationale"
+      ]
+    },
+    "validation_gates": {
+      "type": "object",
+      "properties": {
+        "human_importance": {
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        },
+        "founder_pull": {
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        },
+        "ai_leverage": {
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        },
+        "evidence": {
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        },
+        "alternative_failure": {
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        },
+        "behavior": {
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        },
+        "distribution": {
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        },
+        "monetization": {
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        },
+        "disconfirmation": {
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "human_importance",
+        "founder_pull",
+        "ai_leverage",
+        "evidence",
+        "alternative_failure",
+        "behavior",
+        "distribution",
+        "monetization",
+        "disconfirmation"
+      ]
+    },
+    "feedback_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "evidence": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["source", "url", "summary"],
         "properties": {
-          "date": {"type": ["string", "null"]},
-          "source": {"type": "string"},
-          "url": {"type": "string"},
-          "summary": {"type": "string"},
-          "quote": {"type": ["string", "null"]},
-          "context": {"type": ["string", "null"]},
-          "customer_profile": {"type": ["string", "null"]},
-          "evidence_type": {
+          "evidence_id": {
             "type": "string",
-            "enum": ["explicit_demand", "pain", "workaround", "switching", "timing", "spend", "other"]
+            "minLength": 1
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "source_kind": {
+            "enum": [
+              "historical_report",
+              "vendor_claim",
+              "customer_behavior",
+              "research",
+              "official_doc",
+              "user_observation"
+            ]
+          },
+          "source_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "retrieved_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interpretation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verification": {
+            "enum": [
+              "verified",
+              "unverified",
+              "inaccessible",
+              "contradicted"
+            ]
+          },
+          "independence_key": {
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "confidence": {
-            "type": "string",
-            "enum": ["high", "medium", "low"]
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
           },
-          "observed_vs_inferred": {
-            "type": "string",
-            "enum": ["observed", "inferred", "mixed"]
+          "stance": {
+            "enum": [
+              "supports",
+              "against",
+              "context"
+            ]
+          },
+          "contradicts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
           }
-        }
+        },
+        "required": [
+          "evidence_id",
+          "source_url",
+          "source_kind",
+          "source_date",
+          "retrieved_at",
+          "claim",
+          "interpretation",
+          "verification",
+          "independence_key",
+          "confidence",
+          "stance",
+          "contradicts"
+        ]
       }
     },
-
-    "trigger_events": {"type": "array", "items": {"type": "string"}},
-    "desired_outcomes": {"type": "array", "items": {"type": "string"}},
-    "customer_language": {"type": "array", "items": {"type": "string"}},
-    "existing_spend_workarounds": {"type": "array", "items": {"type": "string"}},
-
-    "switching_dynamics": {
-      "type": "object",
-      "properties": {
-        "push": {"type": "array", "items": {"type": "string"}},
-        "pull": {"type": "array", "items": {"type": "string"}},
-        "habit": {"type": "array", "items": {"type": "string"}},
-        "anxiety": {"type": "array", "items": {"type": "string"}}
-      }
+    "validation_experiment": {
+      "type": [
+        "string",
+        "null"
+      ]
     },
-
-    "competitors": {"type": "array", "items": {"type": "string"}},
-    "competition_note": {"type": "string"},
-    "alternatives": {
+    "source_reports": {
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "name": {"type": "string"},
-          "type": {"type": "string", "enum": ["direct", "secondary", "manual", "do_nothing"]},
-          "pricing": {"type": ["string", "null"]},
-          "strengths": {"type": "array", "items": {"type": "string"}},
-          "customer_complaints": {"type": "array", "items": {"type": "string"}},
-          "source_urls": {"type": "array", "items": {"type": "string"}}
-        }
+        "type": "string",
+        "minLength": 1
       }
     },
-
-    "monetization": {"type": "string"},
-    "pricing_hypothesis": {
-      "type": "object",
-      "properties": {
-        "next_best_alternative": {"type": ["string", "null"]},
-        "current_spend_or_cost": {"type": ["string", "null"]},
-        "value_metric": {"type": ["string", "null"]},
-        "test_price": {"type": ["string", "null"]},
-        "learning_goal": {"type": ["string", "null"]}
-      }
+    "next_step": {
+      "type": "string",
+      "minLength": 1
     },
-
-    "acquisition": {"type": "string"},
-    "first_customer_signals": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["source_url", "signal"],
-        "properties": {
-          "prospect": {"type": ["string", "null"]},
-          "source_url": {"type": "string"},
-          "date": {"type": ["string", "null"]},
-          "signal": {"type": "string"},
-          "stage": {
-            "type": "string",
-            "enum": ["high_intent", "problem_aware", "trigger_present", "potential_fit"]
-          },
-          "channel": {"type": ["string", "null"]},
-          "confidence": {
-            "type": "string",
-            "enum": ["high", "medium", "low"]
-          }
-        }
-      }
+    "updated_at": {
+      "type": "string",
+      "minLength": 1
     },
-
-    "validation_offer": {
-      "type": "object",
-      "properties": {
-        "core_deliverable": {"type": ["string", "null"]},
-        "dream_outcome": {"type": ["string", "null"]},
-        "time_to_first_value": {"type": ["string", "null"]},
-        "customer_effort": {"type": ["string", "null"]},
-        "risk_reversal": {"type": ["string", "null"]},
-        "test_price": {"type": ["string", "null"]},
-        "cta": {"type": ["string", "null"]}
-      }
-    },
-
-    "validation_experiment": {"type": "string"},
-    "validation_gates": {
-      "type": "object",
-      "properties": {
-        "research_quality": {"type": "boolean"},
-        "competition_gap": {"type": "boolean"},
-        "monetization": {"type": "boolean"},
-        "reachability": {"type": "boolean"},
-        "disconfirmation": {"type": "boolean"}
-      }
-    },
-
-    "risks": {"type": "array", "items": {"type": "string"}},
-    "next_step": {"type": "string"},
-    "status": {"type": "string"},
-    "score": {"type": "number", "minimum": 0, "maximum": 100}
-  }
+    "decision_reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "title",
+    "problem",
+    "target_user",
+    "stage",
+    "solution_directions",
+    "assessment",
+    "validation_gates",
+    "feedback_ids",
+    "evidence",
+    "validation_experiment",
+    "source_reports",
+    "next_step",
+    "updated_at",
+    "decision_reason"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

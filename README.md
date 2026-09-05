@@ -1,65 +1,43 @@
-# Problem Hunter
+# Opportunity Hunter
 
-Persistent research system for finding product opportunities backed by real pain signals.
+Find business ideas Ilya wants to explore, then test the riskiest assumption with real users within €500.
 
-> **For a new chat/session:** read `CURRENT_STATE.md` first, then `config/`, `prompts/`, `MARKETING_SKILLS.md`, `data/`, and the relevant reports. The repository is the long-term source of truth; chat history is not.
+## Start a session
+1. Read `CURRENT_STATE.md` (generated overview).
+2. Read `config/profile.json`, `config/cycle.json`, `config/scoring.json` and the relevant protocol in `prompts/`.
+3. Read `data/opportunities.jsonl`, `data/feedback.jsonl`, `data/observations.jsonl`, `data/runs.jsonl` and experiment records.
+4. Open original sources before treating historical claims as verified. Reports are supporting history, never the live ranking.
 
-## Objective
-Find B2B or B2C ideas worth building — not idea-generator output. A strong candidate needs repeated evidence, a clear target user and buyer, a believable path to first paid users, and an experiment that can start with <= €500.
+## Source of truth
+- `data/opportunities.jsonl`: **only editable opportunity registry**, including explore, validate, experiment, watch and reject.
+- `data/candidates.jsonl`, `data/watchlist.jsonl`, `data/rejected.jsonl`: generated compatibility views; do not edit.
+- `CURRENT_STATE.md`: generated from the registry, cycle and current criteria; do not edit.
+- `data/feedback.jsonl`: actual user reactions and ratings. Missing interest is unknown, never an assistant estimate.
+- `data/observations.jsonl`: user-supplied observations and field research; distinguish observation from interpretation.
+- `data/experiments/*.json`: prepared/active/completed tests, costs and actual results.
+- `data/runs.jsonl`: coverage, decisions, changed evidence and stalled-search tracking.
+- `archive/2026-09-05/`: original scores and records, preserved before migration.
+- `experiments/`: ready-to-use field-test kits.
 
-## User constraints
-- Markets: B2B and B2C
-- MVP duration: flexible; idea quality matters more than speed
-- Pre-revenue validation budget: <= €500
-- Domains: broad, including health, dating, enterprise, hardware, marketplaces
-- Boring is acceptable when the underlying problem/business is genuinely interesting
+## Two stages of research
+**Explore:** specific people, meaningful situation, initial credible signal, plausible user interest. No requirement for proven monetization or a high total score. Keep multiple solutions open.
 
-## Pipeline
-`signal -> customer-research synthesis -> normalize -> deduplicate -> cluster -> score -> deep validation -> promotion gates -> opportunity backlog -> paid/manual experiment`
+**Validate:** test alternatives, actual behavior, acquisition and payment. A competitor's marketing claim is not proof of problem resolution. Select the cheapest test of the largest uncertainty. Unknown adoption or monetization is a reason for an experiment, not an automatic rejection.
 
-## Core rules
-1. Evidence before ideas.
-2. Multiple independent signals beat one viral complaint.
-3. Existing spend/workarounds are strong evidence of willingness to pay.
-4. Search explicit demand, pain, workarounds, switching and timing triggers separately.
-5. Separate observed evidence from inference and attach confidence.
-6. Penalize generic AI wrappers and saturated categories.
-7. Record rejected ideas so they are not rediscovered endlessly.
-8. Separate "interesting" from "commercially strong" and score both.
-9. Red-team strong candidates before promoting them.
-10. A numerical score cannot bypass the validation gates.
-11. Prefer evidence-backed first-customer prospects over generic ICP lists.
-12. Prefer paid concierge/manual validation before expensive integrations or product build-out.
-13. Notify only on strong candidates or meaningful new evidence.
+The user selects what to test. Prepare proposals autonomously, but do not invent founder ratings, contacts, interviews, payments or results. Sending messages requires explicit authorization. Do not put private participant records, personal contact details or confidential material into this public repository; retain redacted observations and safe references.
 
-## Marketing validation layer
-Problem Hunter selectively adapts patterns from `coreyhaines31/marketingskills` for customer research, competitive intelligence, product positioning, pricing, demand-signal prospecting, validation offers and recurring research loops.
+## Operating rhythm
+Two focused research passes per week and a Sunday review; exact schedules are in `config/automations/`. Work on two audiences per cycle, roughly 80% focused / 20% adjacent discovery, at most three items for user choice and one active experiment. Stop repeating exhausted searches. MVP duration remains flexible; €500 is the validation spending limit, not the product price.
 
-See `MARKETING_SKILLS.md` for the exact mapping and what was intentionally excluded.
+## Commands
+```sh
+python -m pip install -r requirements.txt
+python -m src.check
+python -m unittest discover -s tests -v
+python -m src.report --write
+python -m src.report --check
+```
 
-### Promotion gates
-Deep validation explicitly checks:
-- research quality
-- competition gap
-- monetization / test price
-- evidence-backed reachability
-- disconfirmation / red-team quality
+Use `python -m src.feedback --help` to record an explicit user reaction. After every canonical edit, validate, regenerate and commit related files atomically. Read the latest remote head before writing; never force-push over another session.
 
-A failed gate can keep a high-scoring candidate in WATCH.
-
-## Repository
-- `CURRENT_STATE.md` — latest ranking, cadence, decisions and operating rules
-- `MARKETING_SKILLS.md` — adapted marketing-skill layer and source mapping
-- `config/profile.json` — founder/search constraints
-- `config/scoring.json` — deterministic scoring model
-- `src/scoring.py` — deterministic score calculator
-- `src/store.py` — JSONL persistence and deduplication
-- `prompts/scan.md` — customer-research + demand-signal hunting protocol
-- `prompts/validate.md` — deep validation, competitor profiling, first-customer and red-team protocol
-- `schema/candidate.schema.json` — candidate evidence, switching, pricing, prospect and validation-gate structure
-- `data/candidates.jsonl` — promoted candidate memory
-- `data/watchlist.jsonl` — lower-confidence opportunities worth monitoring
-- `data/rejected.jsonl` — rejection memory
-- `reports/` — human-readable research reports
-
-The scheduled research loop complements the code: it searches public sources, persists high-quality findings, deduplicates against repository state, and only alerts when something crosses the quality threshold or materially changes.
+`MARKETING_SKILLS.md` describes adapted research methods; `prompts/` and versioned configs govern current behavior. Numerical scores support decisions only when complete and sourced. Historical scores are never comparable across criteria versions.

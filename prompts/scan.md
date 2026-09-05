@@ -1,150 +1,33 @@
-# Opportunity Hunter Scan Protocol
+# Focused opportunity discovery — v2.0
 
-## Mission
-Find product opportunities worth caring about and building, not merely monetizable inefficiencies.
+Read README, CURRENT_STATE, profile, cycle, scoring, canonical registry, feedback, observations and the last two run records. If repo access fails, report the access failure once and make no claim of persistence or a fresh exhaustive scan.
 
-The core intersection is:
-1. a meaningful human problem or aspiration,
-2. genuine founder pull — intellectually or creatively interesting enough to work on for years,
-3. a real new lever from modern AI/agents,
-4. credible adoption and monetization.
+## Allocate attention
+Use the two audiences in config/cycle.json. Spend roughly 80% of research effort on their concrete situations and 20% on adjacent surprises. Do not impose narrow B2B back-office filters. Keep the approved focus on meaningful human outcomes, founder interest and genuinely useful AI. MVP duration is flexible; test budget is <=€500.
 
-Primary question:
+## Research situations before inventing products
+For each audience ask what happened the last time the person tried to achieve an outcome, what they did, which tools/people they used, what they invested and what failed. Search separately for recent attempts, repeated workarounds, switching, existing spending, abandonment and successful alternatives. Read original discussions, replies and product pages; detect founder promotion and copied stories. Marketing pages establish offers/features, not user outcomes or sales volume.
 
-> What still works surprisingly badly for people despite the arrival of AI, and what can now be done that was impractical 2–3 years ago?
+User observations, voluntarily shared interview notes and actual test results are first-class sources. Record redacted entries in observations with observation_id, date, candidate_id (or null), audience_id, source_ref, observed_fact, interpretation, consent/safe-to-share status, confidence and follow-up question. Do not infer private contacts or a user's access to a community.
 
-Separate **problem quality** from **solution quality**. A bad first product concept must not cause a strong underlying problem to be rejected.
+## Evidence discipline
+Each evidence record has stable ID, source URL (or safe first-party source_ref), source publication date if known, retrieved date, exact supported claim, interpretation, source kind, verification state, independence key, confidence and contradictions. Do not invent dates, quotes or independence. Reposts/press coverage of one announcement count as one origin. Unavailable sources remain unverified/inaccessible. Preserve negative evidence.
 
-## Priority domains
-Search broadly, with extra attention to:
-- loneliness and social connection
-- relationships and dating
-- learning and personal development
-- mental wellbeing and self-regulation
-- embodiment, movement and physical development
-- creativity
-- travel and real-world exploration
-- work, meaning and useful productivity
-- money and personal autonomy
-- life administration and decision-making
+## Explore gate
+An EXPLORE record needs a concrete segment, important situation and at least an initial credible signal. Unknown founder interest is labeled 'awaiting user feedback' and does not stop discovery. Do not require five sources, paid intent, retention proof or high score before learning. Candidate should include 2–3 possible solutions when useful and the cheapest next uncertainty check. Avoid speculative generic AI wrappers.
 
-Adjacent domains are allowed when the opportunity is unusually strong.
+A competitor alone does not kill a problem. Ask whether the same segment has tried it, what outcome failed and why. Separate 'vendor advertises capability' from 'users achieved outcome'. Compare geography, price, trust, setup, distribution and real results. Reject a solution scope, not the entire problem, unless evidence supports that broader decision.
 
-## What counts as a strong signal
-Look for repeated evidence that people:
-- struggle with an important outcome,
-- repeatedly fail with current tools or methods,
-- spend money, time, attention or emotional energy trying to solve it,
-- build workarounds or combine multiple products,
-- abandon existing products because they do not create the desired outcome,
-- explicitly ask for something that does not exist,
-- exhibit a behavior that a new AI capability could materially improve.
+## Feedback and deduplication
+Check every registry stage by stable candidate ID, segment, desired outcome and semantic similarity before adding. Exact hash matching is only a backstop. Attach new evidence to the existing opportunity even if its stage changed. Reopen rejected solutions only on their recorded trigger; allow a different solution for a surviving problem.
 
-Search Reddit, specialist forums, app reviews, product reviews, research, creator communities, GitHub discussions, public professional discussions, niche communities, and other primary sources.
+Never assign founder_pull. Quote or summarize actual user feedback with provenance; only an explicit 0–10 rating goes into the score. 'Interesting' is a reaction, not permission to translate it to 9/10. Track whether the rejection concerns audience, problem, daily work, business model, distribution or something else; do not generalize one rejection to a whole field.
 
-Do not confuse loud complaints with important problems. Prefer repeated behavior over stated preferences.
+## End each pass
+Update the canonical records and append a run log: run_id, date, criteria_version, cycle_id, audiences, actual queries/source URLs, new independent signals, changed candidate IDs, decision_changes, no_change_reason, next_question, actual experiment progress, notified_event_keys. Log zero new results honestly.
 
-## AI-leverage test
-For every promoted candidate, answer:
-- What specifically became possible or economically viable because of current AI/agents?
-- Could this product have been built almost as well in 2022–2023?
-- Is AI core to the product behavior, or merely a chat interface / content-generation layer?
-- Does memory, personalization, multimodality, agentic action, reasoning, simulation, or cheap generation create a qualitatively different product?
+After two focused passes without material new evidence, stop the query family, change source/audience or prepare field research. Do not keep scanning a prepared experiment's already-established problem while its next learning requires people. Continue useful preparation without pretending fieldwork happened.
 
-If AI is cosmetic, penalize heavily.
+Run schema/provenance checks, regenerate views/state and commit together against latest remote head. Never force-push; re-read and merge changes if another session has written.
 
-## Human-importance test
-Ask:
-- Does solving this materially improve someone's capability, relationships, wellbeing, autonomy, creativity, learning, income, or experience of life?
-- Is the outcome meaningful enough that users already invest effort in it?
-- Is this more than a small convenience or minor time saving?
-
-A narrow problem can still be important. A large market with trivial human value is not automatically attractive.
-
-## Founder-pull test
-Ask:
-- Is the problem rich enough to keep learning about?
-- Is there room for product invention rather than only implementation?
-- Would building it create curiosity rather than obligation?
-- Does the problem involve human behavior, systems, interaction, or a genuinely new product model?
-
-Founder pull is a first-class criterion, not a tie-breaker.
-
-## Strongly deprioritize
-Unless there is an unusually large human or strategic consequence, down-rank:
-- generic compliance/regulation tooling
-- invoicing/bookkeeping
-- CRM and commodity workflow automation
-- procurement/document chasing
-- back-office efficiency products
-- vertical SaaS whose main benefit is administrative convenience
-- products whose pitch is mainly “save a few minutes”
-
-Reject generic AI wrappers and cosmetic AI differentiation.
-
-## Evidence capture
-For each signal capture:
-- date + source URL
-- precise user/segment
-- observed behavior or complaint
-- current workaround / spend / effort
-- intensity and recurrence clues
-- desired outcome
-- why current alternatives fail
-- what is observed vs inferred
-- confidence
-
-Prefer 3+ independent sources before promotion and 5+ before serious validation where feasible.
-
-## Candidate synthesis
-For every candidate explain plainly:
-1. Who has the problem?
-2. What are they trying to achieve?
-3. What happens today instead?
-4. Why does this matter in their life?
-5. What do they already spend — money, time, attention or emotional effort?
-6. Why do existing solutions fail?
-7. What new AI lever exists now?
-8. What product directions are plausible? Keep multiple directions open when appropriate.
-9. What behavior change would the product require?
-10. How could the first users be reached?
-11. How might it monetize?
-12. What would make the opportunity false?
-
-## Promotion gate
-Promote only when:
-- the underlying problem is meaningful,
-- evidence is repeated and segment-specific,
-- founder pull is high enough to justify further attention,
-- AI provides a real new lever,
-- existing alternatives are meaningfully inadequate,
-- adoption does not require implausible behavior change,
-- there is at least a plausible distribution and monetization path.
-
-Do not promote an idea simply because a buyer exists.
-
-## Scoring
-Use `config/scoring.json`.
-
-Always report these three summary scores:
-- **Human importance**
-- **Founder pull**
-- **Business potential**
-
-The numerical score is subordinate to judgment. A commercially strong but uninspiring administrative tool should not become PRIORITY.
-
-## Output
-Keep candidate reports concise and concrete:
-- problem + target user
-- why it matters
-- strongest evidence
-- current alternatives and failure mode
-- why now / AI lever
-- possible product direction(s)
-- behavior-change burden
-- monetization + acquisition
-- <= €500 validation test
-- strongest argument against
-- Human importance / Founder pull / Business potential
-
-If nothing feels genuinely worth building, return no candidate rather than filling the backlog with mediocre ideas.
+At most three items per cycle for user choice; fewer or none is fine. Notify only for useful new options, changed evidence or a concrete decision. Use plain Russian: who, situation, evidence, possible product, uncertainty, first-user route, test. Show human importance and business potential as provisional if assessed; founder interest stays unknown until the user rates it. Scores do not suppress an interesting early discovery.

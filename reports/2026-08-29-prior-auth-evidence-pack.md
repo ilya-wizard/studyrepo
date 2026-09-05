@@ -1,3 +1,5 @@
+> Historical research. Current stages and scores live in `data/opportunities.jsonl` and generated `CURRENT_STATE.md`. Reopen original sources before relying on claims; historic assistant interest ratings are not user feedback.
+
 # Candidate: Prior Authorization Evidence-Pack Copilot
 
 **Preliminary decision:** DEEP VALIDATE

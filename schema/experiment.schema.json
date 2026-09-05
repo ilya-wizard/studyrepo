@@ -1,0 +1,153 @@
+{
+  "type": "object",
+  "properties": {
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "prepared",
+        "active",
+        "completed",
+        "stopped"
+      ]
+    },
+    "selected_by_user": {
+      "type": "boolean"
+    },
+    "hypothesis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "riskiest_assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "budget_eur": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0
+      }
+    },
+    "budget_cap_eur": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 500
+    },
+    "target_attempts": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "minimum_interviews": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "pass_rule": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fail_rule": {
+      "type": "string",
+      "minLength": 1
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "observation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interpretation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "outcome": {
+            "enum": [
+              "supports",
+              "against",
+              "inconclusive"
+            ]
+          }
+        },
+        "required": [
+          "date",
+          "source_ref",
+          "observation",
+          "interpretation",
+          "outcome"
+        ]
+      }
+    },
+    "spend_eur": {
+      "type": "number",
+      "minimum": 0
+    },
+    "actual_contacts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "actual_interviews": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "actual_paid_pilots": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "completed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "kit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "experiment_id",
+    "candidate_id",
+    "status",
+    "selected_by_user",
+    "hypothesis",
+    "riskiest_assumptions",
+    "budget_eur",
+    "budget_cap_eur",
+    "target_attempts",
+    "minimum_interviews",
+    "pass_rule",
+    "fail_rule",
+    "results",
+    "spend_eur",
+    "actual_contacts",
+    "actual_interviews",
+    "actual_paid_pilots",
+    "completed_at",
+    "kit",
+    "next_action"
+  ]
+}
