@@ -31,7 +31,7 @@ Total: 20; explore: 2; reject: 14; watch: 4.
 
 ## Experiment facts
 
-- movement-localization-pilot-001: **prepared**. Contacts 0; interviews 0; paid pilots 0; spend €0; planned budget €400 / cap €500.
+- movement-localization-pilot-001: **prepared**. Contacts 0; interviews 0; paid pilots 0; spend €0; planned budget €80 / cap €100.
 
 ## Interpretation rules
 

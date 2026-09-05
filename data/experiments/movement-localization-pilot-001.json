@@ -10,18 +10,18 @@
     "Movement-specific QA improves usefulness enough to justify payment."
   ],
   "budget_eur": {
-    "production_tools": 40,
-    "sample_qa": 160,
-    "learner_tests": 100,
-    "contingency": 100
+    "production_tools": 25,
+    "sample_qa": 30,
+    "learner_tests": 0,
+    "contingency": 25
   },
-  "budget_cap_eur": 500,
+  "budget_cap_eur": 100,
   "target_attempts": 20,
   "minimum_interviews": 5,
-  "offer_price_eur": 500,
+  "offer_price_eur": 149,
   "sample_minutes": 5,
   "pilot_deliverable_minutes": 30,
-  "pass_rule": "From 20 qualified prospects: >=5 substantive conversations, >=3 independently evidenced recent expansion attempts, and >=1 paid pilot at EUR500; usable sample and concrete distribution path required.",
+  "pass_rule": "From 20 qualified prospects: >=5 substantive conversations, >=3 independently evidenced recent expansion attempts, and >=1 paid 30-minute pilot at EUR120-200 (target EUR149); usable sample and concrete distribution path required.",
   "fail_rule": "After 20 qualified contacts and one follow-up: no paid commitment -> stop current offer and inspect objections. Fewer than 5 conversations -> channel inconclusive, not problem disproved.",
   "secondary_commitment_rule": "Signed revenue-share/rights commitment is partnership evidence only; it does not pass paid-demand gate.",
   "results": [],
@@ -31,5 +31,5 @@
   "actual_paid_pilots": 0,
   "completed_at": null,
   "kit": "experiments/movement-localization-pilot-001.md",
-  "next_action": "Prepare rights-cleared sample only after creator supplies/authorizes content; personalized messages remain drafts until sending is explicitly authorized."
+  "next_action": "Test a EUR149 30-minute localization offer; reserve EUR350-500 pricing for a broader package with substantially more content and launch work. Prepare rights-cleared sample only after creator authorization."
 }
